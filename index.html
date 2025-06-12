@@ -261,6 +261,23 @@
     input {
         width: auto;
     }
+    #popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #000;
+        color: #fff;
+        padding: 2rem 3rem;
+        border: 2px solid #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 30px rgba(0,0,0,0.2);
+        font-size: 1.5rem;
+        font-weight: 800;
+        z-index: 9999;
+        text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -307,16 +324,25 @@
         <a href="https://github.com/nithindask" target="blank_"><i class="ph ph-github-logo"></a></i></p>
     </div>
 
-    <form class="footer-right" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeStTXFd_74kRmjLlKSL9glTIrCdtvyC9Mc61IkglbJWJWtEg/formResponse">
-      <h3>Contact</h3>
-      <label for="name">Name</label>
-      <input id="name" type="text" name="entry.1787499267" required placeholder="Your Name">
+    <form class="footer-right" target="hidden_iframe" onsubmit="showPopup()" method="POST" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeStTXFd_74kRmjLlKSL9glTIrCdtvyC9Mc61IkglbJWJWtEg/formResponse">
+  <h3>Contact</h3>
+  <label for="name">Name</label>
+  <input id="name" type="text" name="entry.1787499267" required placeholder="Your Name">
 
-      <label for="message">Message</label>
-      <textarea id="message" name="entry.746855918" rows="4" required placeholder="Your Message"></textarea>
+  <label for="email">Email</label>
+  <input id="email" type="email" name="entry.1045890981" required placeholder="Email">
 
-      <button type="submit">Send</button>
-    </form>
+  <label for="message">Message</label>
+  <textarea id="message" name="entry.746855918" rows="4" required placeholder="Your Message"></textarea>
+
+  <button type="submit">Send</button>
+</form>
+
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+<div id="popup">
+  Thank You for your response !
+</div>
   </div>
 
   <div class="footer-bottom">
@@ -330,6 +356,12 @@
     window.addEventListener('scroll', () => {
       scrollIndicator.classList.toggle('hidden', window.scrollY > 20);
     });
+
+  function showPopup() {
+    setTimeout(() => {
+      alert("Thank you for your response !");
+    }, 500);
+  }
   </script>
 </body>
 </html>
