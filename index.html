@@ -1,122 +1,335 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>i</title>
-<link href="" rel="icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#eefaf5">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <title>Nithin Das | Personal portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      height: 100%;
+      font-family: 'Inter', sans-serif;
+      background: #eefaf5;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: #bde3d1 #eefaf5;
+    }
+
+        ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #eefaf5;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #bde3d1;
+      border-radius: 20px;
+      border: 2px solid #eefaf5;
+    }
+
+    #about {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      background-color: #000;
+      color: #eefaf5;
+    }
+
+    .scroll-indicator {
+      position: fixed;
+      bottom: 2vh;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #333;
+      font-weight: bold;
+      font-size: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 100;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .scroll-indicator::after {
+      content: '↓';
+      font-size: 1.5rem;
+      animation: bounce 1.5s infinite;
+    }
+
+    .scroll-indicator.hidden {
+      opacity: 0;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    footer {
+      position: relative;
+      background: #000;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-wave {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      overflow: hidden;
+      line-height: 0;
+    }
+
+    .footer-wave svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 100px;
+    }
+
+    .footer-wave path {
+      fill: #000;
+    }
+
+    .doodle {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: rgba(0,0,0,0.05);
+      border-radius: 50%;
+      z-index: 1;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .container:nth-child(odd) .doodle {
+      top: 20%;
+      left: 90%;
+    }
+
+    .container:nth-child(even) .doodle {
+      bottom: 15%;
+      left: 5%;
+    }
+
+    .container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4vh 6vw;
+      position: relative;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 100%;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease-in-out;
+      z-index: 2;
+    }
+
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .highlight {
+      background: #c8f3e4;
+      padding: 0.3rem 0.6rem;
+      border-radius: 0.5rem;
+    }
+    h1, h2 {
+      font-weight: 900;
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+
+    .works {
+        padding: 1.5rem;
+        font-size: 1.2rem;
+    }
+
+    .work {
+        color: inherit;
+        text-decoration-color: red;
+        font-weight: 600;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2rem;
+        padding: 2rem 6vw;
+    }
+
+    .footer-left {
+        flex: 1 1 300px;
+    }
+
+    form h3 {
+        margin-bottom: 3rem;
+        font-size: 2rem;
+        text-decoration: underline;
+    }
+
+    .footer-left p {
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-left a {
+        color: white;
+        text-decoration: none;
+        font-size: 2rem;
+        padding: 5px;
+    }
+
+    .footer-right {
+        flex: 1 1 300px;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .footer-right label {
+        text-align: left;
+        font-size: 1.1rem;
+        width: 100%;
+        font-weight: 600;
+        margin-top: 0.5rem;
+    }
+
+    .footer-right input,
+    .footer-right textarea {
+        padding: 0.5rem;
+        border: none;
+        border-radius: 10px;
+        resize: vertical;
+    }
+
+      .footer-right button {
+        padding: 0.6rem;
+        background: #fff;
+        color: #000;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 10px;
+        margin-top: 0.5rem;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        padding: 1rem 0;
+        font-size: 0.8rem;
+        opacity: 0.6;
+    }
+
+    input {
+        width: auto;
+    }
+  </style>
 </head>
-<style>
-	body {
-		background-color: lightblue;
-		line-height: 1.5;
-	}
-	.container {
-		background-color: #f9f9f9;
-		margin: 30px;
-		padding-bottom: 10px;
-		border-style: outset;
-		width: 80%;
-	}
-	.head {
-		margin: 80px;
-		padding: 20px;
-		background-image: url('bg1.jpg');
-		background-size: 100%;
-		
-	}
-	.main-head {
-		font-size: 40px;
-		font-weight: bold;
-		padding-left: 30px;
-		background: inherit;
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        filter: invert(1) grayscale(1);
-        -webkit-filter: invert(1) grayscale(1);
-	}
-	.sub {
-		font-weight: normal;
-		font-size: 12px;
-		margin-left: 5px;
-	}
-	.part1 {
-		margin: 40px;
-		margin-top: 10px;
-		padding: 20px;
-		border-style: inset;
-		background-image: url('https://picsum.photos/800?aesthetic.png');
-		background-size: 100%;
-	}
-	.part1-main {
-		background-color: white;
-		padding: 5px;
-		padding: 20px;
-		border-style: outset;
-	}
-	.part2 {
-		margin: 40px;
-		margin-top: 10px;
-		padding: 20px;
-		border-style: inset;
-		background-image: url('https://picsum.photos/800?minimal.png');
-		background-size: 100%;
-	}
-	.part2-main {
-		background-color: white;
-		padding: 5px;
-		padding: 20px;
-		border-style: outset;
-	}
-	.footer {
-		margin: 40px;
-		margin-top: 10px;
-		padding: 20px;
-		border-style: inset;
-		background-image: url('https://picsum.photos/800?monochrome.png');
-		background-size: 100%;
-	}
-	.footer-main {
-		background-color: white;
-		padding: 5px;
-		padding: 20px;
-		border-style: outset;
-	}
-	a.footer-link {
-		color: inherit;
-		text-decoration: none;
-	}
-	::selection {
-		background: lightgreen;
-	}
-	mark {
-		background-color: lightgreen;
-	}
-</style>
 <body>
-	<center>
-<div class="container">
-	<div class="head">
-		<p class="main-head">i<sub class="sub">(hey)</sub></p>
-	</div>
-	<div class="part1">
-		<p class="part1-main"><br>Hey there! Welcome...<br>
-		Thank You for being here.<br><br>
-		</p>
-	</div>
-	<div class="part2">
-		<p class="part2-main"><b><br><u>Introduction</u></b><br><br>
-		I am Nithin Das. Goes by Nithin. I'm a <mark>biology student</mark> who is bored of routines and loves to <mark>embrace change</mark>. I've got a variety of hobbies and web development is one of them. I've got friends, family and a lot other persons whom I love and respect. I am <mark>interested in psycology</mark>. Also, I love these tech related stuffs. I'm glad that you were able to find this website since I'm not popular yet and so is this website. So, I would like to <mark>Thank You for spending a certain portion of your precious lifetime in this little place of mine </mark>:)<br><br></p>
-	</div>
-	<div class="footer">
-		<p class="footer-main"><i>
-			<a class="footer-link" href="https://instagram.com/_nithin.das">insta</a>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<a class="footer-link" href="https://github.com/nithindask">github</a>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<a class="footer-link" href="mailto:knee-spirits-lily@duck.com">gmail</a></i></p>
-	</div>
-</div>
-</center>
+
+  <div class="scroll-indicator" id="scroll-indicator">Scroll</div>
+
+  <div class="container">
+    <div class="doodle"></div>
+    <div class="card visible">
+      <img src="profile.png" alt="my photo" class="photo"><br><br><br>
+      <h1>Hello, I'm <span class="highlight">Nithin Das</span></h1><br><br>
+      <p>Creative developer crafting minimal, animated, interactive experiences that resonate. I make ideas tangible through elegant code and thoughtful design.</p>
+    </div>
+  </div>
+  <hr>
+  <div class="container" id="about">
+    <div class="doodle"></div>
+    <div class="card-visible">
+      <h2>About Me</h2>
+      <p>I blend aesthetic sensitivity with rigorous logic. I design with intention, build with precision, and animate with grace. I believe software should feel alive.</p>
+    </div>
+  </div>
+  <hr>
+  <div class="container" id="works">
+    <div class="doodle"></div>
+    <div class="card-visible">
+      <h2>My Works</h2><br>
+      <ul class="works">
+        <li><a class="work" href="" target="_blank"></a></li>
+      </ul>
+    </div>
+  </div>
+
+<footer>
+  <div class="footer-wave">
+    <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+      <path d="M0.00,49.98 C150.00,150.00 349.99,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"></path>
+    </svg>
+  </div>
+
+  <div class="footer-content">
+    <div class="footer-left">
+      <p><a href="https://instagram.com/_.oggye_" target="blank_"><i class="ph ph-instagram-logo"></a></i>
+        <a href="https://github.com/nithindask" target="blank_"><i class="ph ph-github-logo"></a></i></p>
+    </div>
+
+    <form class="footer-right" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeStTXFd_74kRmjLlKSL9glTIrCdtvyC9Mc61IkglbJWJWtEg/formResponse">
+      <h3>Contact</h3>
+      <label for="name">Name</label>
+      <input id="name" type="text" name="entry.1787499267" required placeholder="Your Name">
+
+      <label for="message">Message</label>
+      <textarea id="message" name="entry.746855918" rows="4" required placeholder="Your Message"></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2025 Nithin Das — Made with ❤️
+  </div>
+</footer>
+
+
+  <script>
+    const scrollIndicator = document.getElementById('scroll-indicator');
+    window.addEventListener('scroll', () => {
+      scrollIndicator.classList.toggle('hidden', window.scrollY > 20);
+    });
+  </script>
 </body>
 </html>
