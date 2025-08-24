@@ -4,129 +4,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nithin Das | Portfolio</title>
-    <link href="styles.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Nithin Das | Portfolio</title>
+<link href="styles.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Material+Symbols+Rounded:FILL,GRAD@0,0" rel="stylesheet">
 </head>
 <body>
-    <header id="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <i class="fas fa-code"></i>
-                    nithin das
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
 
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Just a Bored Teenager who's Curious!</h1>
-                <p>observe | analyse | learn | solve</p>
-                <a href="#projects" class="btn">Wanna View My Works !?</a>
-            </div>
-        </div>
-    </section>
+  <header class="topbar">
+    <div class="avatar" aria-hidden="true">
+      <img src="img.png" alt="">
+    </div>
+    <div class="hello">Nithin Das</div>
+    <div class="spacer"></div>
+    <button class="icon-btn" onclick="window.open('https://instagram.com/nithiiieeee', '_blank')" aria-label="instagram"><i class="ph ph-instagram-logo"></i></button>
+    <button class="icon-btn" onclick="window.open('https://github.com/nithindask', '_blank')" aria-label="github"><i class="ph ph-github-logo"></i></button>
+    <button class="icon-btn" onclick="window.open('https://open.spotify.com/user/31fkrqmkvwmisi35r4ujqnbgjxjm?si=93cb6d8e9e05432e', '_blank')" aria-label="spotify"><i class="ph ph-spotify-logo"></i></button>
+  </header>
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title fade-in">About Me</h2>
-            <div class="about-content">
-                <div class="about-img fade-in">
-                    <img src="img.png" alt="Nithin Das">
-                </div>
-                <div class="about-text fade-in">
-                    <h3>Hello! I'm Nithin, a bored teenager based in Land.</h3>
-                    <p>With over 15 years of experience in living, I specialise in not giving a f▒▒ about what others think while also considering useful opinions.</p>
-                    <p>I blend aesthetic sensitivity with rigorous logic. I grew up moving from a quiet village to a busy town. Now I live surrounded by traffic and noise, but still notice the trees, the sunlight, the air, the birds, etc...</p>
-                    <p>I spend most days with family, doing a little bit of everything—chess, design, coding, cubes. Most of the time, I do nothing (⁠•⁠‿⁠•⁠)</p>
-                    <a href="#contact" class="btn">Contact</a>
-                </div>
-            </div>
-        </div>
-    </section>
+  <div class="chips" role="tablist" aria-label="modes">
+    <div class="chip is-active" role="tab" aria-selected="true">Student</div>
+    <div class="chip" role="tab" aria-selected="false">Teen</div>
+    <div class="chip" role="tab" aria-selected="false">Alive</div>
+    <div class="chip" role="tab" aria-selected="false">Human</div>
+    <div class="chip" role="tab" aria-selected="false">Curious</div>
+  </div>
 
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title fade-in">My Works</h2>
-            <div class="projects-container">
-                <div class="project-card fade-in">
-                    <div class="project-img">
-                        <img src="whyyy.jpg" alt="Project 1">
-                    </div>
-                    <div class="project-info">
-                        <h3>None Yet</h3>
-                        <p>Why reading this !?</p>
-                        <a href="https://gifdb.com/images/high/really-why-reaction-h74fcycshvsgoedk.gif" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
+  <section class="section">
+    <div class="grid">
+      <div class="tile">
+        <div class="mini" style="background-image:url('https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/pdrpnht/phpjFxxiI.png')"></div>
+        <div class="ttext">
+          <div class="t1">Chess</div>
+          <div class="t2">Elo : 0.0067</div>
         </div>
-    </section>
+      </div>
+      <div class="tile">
+        <div class="mini" style="background-image:url('https://play-lh.googleusercontent.com/mOkjjo5Rzcpk7BsHrsLWnqVadUK1FlLd2-UlQvYkLL4E9A0LpyODNIQinXPfUMjUrbE')"></div>
+        <div class="ttext">
+          <div class="t1">Music</div>
+          <div class="t2">Playlists : 0</div>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="mini" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUiLHc5Du3fAU-_8oodwFJkNIqeyeKlcHCzg&s')"></div>
+        <div class="ttext">
+          <div class="t1">Coding</div>
+          <div class="t2">Using AI duh !</div>
+        </div>
+      </div>
+      <div class="tile">
+        <div class="mini" style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR1oCMrcYtb_KdPl3SkPZmOQz5TWHb4crPHg&s')"></div>
+        <div class="ttext">
+          <div class="t1">Et cetera</div>
+          <div class="t2">There's more !!</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title fade-in">Contact</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-item fade-in">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>lscqn8c53@mozmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item fade-in">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>6161131110</p>
-                        </div>
-                    </div>
-                    <div class="contact-item fade-in">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Location</h4>
-                            <p>Earth.</p>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://github.com/nithindask" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://instagram.com/nithiiieeee" target="_blank"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <div class="banner">
+    <div class="badge">★</div>
+    <div class="btxt"><strong>About my website</strong><br><span class="ghost">Raw content • Rare updates</span></div>
+    <button class="bbtn" onclick="window.open('https://b3879422.smushcdn.com/3879422/wp-content/uploads/2016/05/welcome-cat.jpg?lossy=1&strip=1&webp=1', '_blank')">Welcome&nbsp;&nbsp;✨</button>
+  </div>
+  <main id="content"></main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">nithin das</div>
-                <div class="footer-links">
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                <p class="copyright">© 2025 Nithin Das. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-    <script src="script.js"></script>
+  <br><br><hr>
+
+<script src="script.js"></script>
+<script src="https://unpkg.com/phosphor-icons"></script>
 </body>
 </html>
 
     <!-- Bye ;)  -->
+
 
 
