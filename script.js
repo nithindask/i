@@ -7,6 +7,12 @@ const sections = [
     type: "square", 
     items: [
       { 
+        name: "Thief & Police", 
+        subtitle: "The childhood classic", 
+        url: "https://nithindask.github.io/tnp",
+        image: "tnp.png"
+      },
+      { 
         name: "None yet", 
         subtitle: "There's nothing in here !!", 
         url: "https://gifdb.com/images/high/really-why-reaction-h74fcycshvsgoedk.gif",
@@ -126,3 +132,4 @@ document.querySelectorAll(".chip").forEach((ch) => {
 
 
         
+
