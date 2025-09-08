@@ -13,10 +13,10 @@ const sections = [
         image: "tnp.png"
       },
       { 
-        name: "None yet", 
-        subtitle: "There's nothing in here !!", 
-        url: "https://gifdb.com/images/high/really-why-reaction-h74fcycshvsgoedk.gif",
-        image: "https://cdn.pfps.gg/pfps/7153-spongebob-bored-face.png"
+        name: "Appsie", 
+        subtitle: "Free underrated utility apps", 
+        url: "https://nithindask.github.io/appsie",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS15WPocHDuNTHUa4PJCJjATIlG7Obb4Cr2Iln869dsho88eZhE"
       }
     ]
   },
@@ -132,4 +132,5 @@ document.querySelectorAll(".chip").forEach((ch) => {
 
 
         
+
 
