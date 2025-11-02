@@ -1,24 +1,133 @@
+:root {
+    --darkbg: #000;
+    --lgt1: #00d4ff;
+    --lgt2: #ff6666;
+    --lgt3: #55ff99;
+    --lgt4: #ffff55;
+    --lgt5: #ffaa33;
+    --lgt6: #cc66ff;
+}
+
+::selection {
+    background-color: #00eaff;
+    color: #000;
+}
+
+@font-face {
+    font-family: fog;
+    src: url("foglihten/Foglihten-068.otf");
+}
+
 body {
-    padding: 15px;
-    background-color: #000;
-    color: #fff;
-    font-family: "Bitcount Grid Single", system-ui;
+    padding: 10px;
+    margin-bottom: 0;
+    font-family: fog;
+    background-color: var(--darkbg);
+    color: var(--lgt1);
 }
-body ::selection {
-    color: lightgreen;
+
+.main #head {
+    margin-bottom: .5px;
 }
-.main #top-head {
-    font-size: larger;
-    color: aqua;
-}
+
 .main #desc {
-    color: lightgray;
-    font-size: small;
+    color: var(--lgt4);
+    font-size: 10px;
+    margin-top: 0;
 }
-.maintainance #warning {
-    color: red;
+
+.sec {
+    margin: 5px;
+}
+
+.sec #head {
+    color: var(--lgt5);
+    font-size: 15px;
+}
+
+.folder {
+    cursor: pointer;
+    user-select: none;
     display: flex;
-    justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    gap: .4rem;
+    font-weight: bold;
+    color: var(--lgt1);
+}
+
+.folder::before {
+    content: ">";
+    display: inline-block;
+    width: 1em;
+    transition: transform .25s ease;
+}
+
+.folder-toggle:checked + .folder::before {
+    transform: rotate(90deg);
+}
+
+.folder-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .35s ease, padding .35s ease;
+    padding: 0 1.6rem;
+    color: white;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.folder-toggle:checked + .folder + .folder-content {
+    max-height: 300px;
+    padding: 1rem 1.6rem;
+}
+
+.folder-toggle {
+    display: none;
+}
+
+#proj {
+    color: var(--lgt3);
+}
+
+#soci {
+    color: var(--lgt2);
+}
+
+.password-gate {
+    margin-top: 1rem;
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+.password-gate input {
+    background: var(--darkbg);
+    border: 1px solid var(--lgt1);
+    color: var(--lgt1);
+    font-family: fog;
+    padding: .4rem;
+    font-size: 14px;
+    outline: none;
+}
+
+.password-gate button {
+    background: var(--lgt2);
+    color: var(--darkbg);
+    border: none;
+    padding: .4rem .8rem;
+    font-family: fog;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.secret-content {
+    display: none;
+    margin-top: 1rem;
+    color: var(--lgt3);
+}
+
+#secr {
+    color: red;
 }
